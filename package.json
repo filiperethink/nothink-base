@@ -1,0 +1,16 @@
+{
+  "name": "nothink-base",
+  "version": "1.0.0",
+  "entry": "index.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filiperethink/nothink-base.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filiperethink/nothink-base/issues"
+  },
+  "homepage": "https://github.com/filiperethink/nothink-base#readme"
+}
