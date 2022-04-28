@@ -1,4 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
+import {
+  getFirestore,
+  getDocs,
+  collection,
+} from "https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAqk4ALbm2bcOw5pWAzQfVJEU1Wbyqp7nM",
@@ -12,4 +17,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-console.log(app.options.projectId);
+const db = getFirestore(app);
+
+getDocs(collection(db, "notes")).then((result) => {
+  result.forEach((doc) => {
+    console.log(doc.data());
+  });
+});
