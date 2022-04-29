@@ -6,11 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nothink - Suas Anotações</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./public/favicon.png" type="image/x-icon" />
   </head>
   <body>
-    <h1>Nothink - Suas Anotações</h1>
     <span id="isLoading"></span>
-    <ul id="list-notes"></ul>
+    <div id="sidebar" class="navbar">
+      <div class="logo-wrapper">
+        <img src="./public/logo.svg" class="logo" alt="Logo Nothink" />
+      </div>
+      <div class="main-wrapper">
+        <button id="btnCreate" class="btn-create-notes">Criar nota</button>
+        <div class="divider"></div>
+        <ul id="list-notes" class="list-notes"></ul>
+      </div>
+    </div>
   </body>
   <script src="./index.js" type="module"></script>
 </html>
