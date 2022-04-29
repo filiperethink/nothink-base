@@ -9,17 +9,18 @@
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
   </head>
   <body>
-    <span id="isLoading"></span>
     <div id="sidebar" class="navbar">
       <div class="logo-wrapper">
         <img src="./assets/logo.svg" class="logo" alt="Logo Nothink" />
       </div>
-      <div class="main-wrapper">
+      <div class="main-wrapper" id="main-wrapper">
         <button id="btnCreate" class="btn-create-notes">Criar nota</button>
         <div class="divider"></div>
+        <span class="isLoading" id="isLoading"></span>
         <ul id="list-notes" class="list-notes"></ul>
       </div>
     </div>
+    <div class="content" id="content"></div>
   </body>
   <script src="./src/index.js" type="module"></script>
 </html>

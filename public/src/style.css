@@ -145,8 +145,18 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.navbar {
+body {
+  display: flex;
   height: 100vh;
+}
+
+.isLoading {
+  /* display: none; */
+  color: #fefefe;
+}
+.navbar {
+  display: flex;
+  flex-direction: column;
   width: 300px;
   padding: 30px 20px;
   background-color: var(--color-main);
@@ -203,7 +213,7 @@ body {
   cursor: pointer;
   width: 300px;
   max-width: 300px;
-  height: 70px;
+  height: 80px;
   padding: 10px 12px;
   white-space: nowrap;
   overflow: hidden;
@@ -234,9 +244,9 @@ body {
   font-size: 14px;
   cursor: pointer;
   color: var(--color-main);
+  margin-bottom: 10px;
 }
 .card-description {
-  margin-top: 5px;
   font-size: 10px;
   width: 250px;
   font-weight: thin;
@@ -247,5 +257,35 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Content */
+
+.content {
+  background-color: var(--color-base);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 40px 60px;
+  flex: 1;
+  height: 100vh;
+}
+
+.note-title {
+  font-weight: bold;
+  font-size: 45px;
+  cursor: pointer;
+  color: var(--color-main);
+  margin-bottom: 10px;
+}
+
+.note-description {
+  font-weight: thin;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--color-text);
+  margin-top: 20px;
   line-height: 1.5;
+  word-spacing: 5px;
 }

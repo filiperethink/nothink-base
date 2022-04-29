@@ -2,6 +2,9 @@ import Firebase, { db } from "./firebaseConfig.js";
 const listNotes = document.getElementById("list-notes");
 const isLoadingElement = document.getElementById("isLoading");
 const btnCreateElement = document.getElementById("btnCreate");
+const contentElement = document.getElementById("content");
+const wrapperElement = document.getElementById("main-wrapper");
+let notes = [];
 
 async function getNotes() {
   const notes = await Firebase.getDocs(Firebase.collection(db, "notes"));
@@ -25,9 +28,19 @@ function renderNotes(notes) {
   });
 }
 
+function renderNote(note) {
+  console.log({ note });
+  contentElement.innerHTML = `
+    <h4 class="note-title">${note.title}</h4>
+    <p class="note-description">${note.description}</p>
+  `;
+}
+
 function addEventsToItens() {
   document.querySelectorAll("#cardItem").forEach((note) => {
     note.addEventListener("click", () => {
+      const selectedCardId = note.attributes.tagName.nodeValue;
+      renderNote(notes.filter((n) => n.id === selectedCardId)[0]);
       document
         .querySelectorAll("#cardItem")
         .forEach((note) => (note.classList = "card"));
@@ -42,9 +55,10 @@ function addEventsToItens() {
 }
 
 async function initApp() {
-  isLoadingElement.innerHTML = "Loading...";
-  const notes = await getNotes();
-  document.body.removeChild(isLoadingElement);
+  isLoadingElement.innerHTML = "Carregando...";
+  notes = await getNotes();
+  wrapperElement.removeChild(isLoadingElement);
+
   renderNotes(notes);
   addEventsToItens();
 }
